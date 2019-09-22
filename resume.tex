@@ -1,6 +1,7 @@
 %-------------------------
 % Resume in Latex
 % Author : Sourabh Bajaj
+% Author : Kevin Kredit
 % License : MIT
 %------------------------
 
@@ -15,7 +16,8 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage{multicol}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -24,10 +26,10 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.5in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -51,10 +53,15 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \textbf{#1} \dotfill #2 \newline
+    \textit{\small#3} \hfill \textit{\small #4}
+  \vspace{-5pt}
+}
+
+\newcommand{\resumeReference}[4]{
+  \vspace{-1pt}\item
+    \textbf{#1} - \textit{\small#2} \dotfill #3 - #4
+  \vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -66,28 +73,88 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\resumeListMulticolStart}[1]{
+  \vspace{-2.4em}
+  \begin{multicols}{#1}
+    \begin{itemize}[label={}]
+      \item
+}
+\newcommand{\resumeListMulticolEnd}{
+    \end{itemize}
+  \end{multicols}
+  \vspace{-10pt}
+}
+
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
+
 %----------HEADING-----------------
+
+% Put your contact info in contact-info.tex with the format
+% \newcommand{\myemail}{email@addr.com}
+% \newcommand{\myphone}{(###) ###-####}
+\input{contact-info}
+
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+  \textbf{{\Huge Kevin Kredit}} & \href{mailto:\myemail}{\myemail}\\
+  \href{https://github.com/kkredit}{http://github.com/kkredit} & \myphone \\
 \end{tabular*}
+
+
+%-----------OBJECTIVE-----------------
+\section{Objective}
+Embedded software engineer seeking to move into higher level software and advance the state of safety and security.
 
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+      {Grand Valley State University}{Grand Rapids, MI}
+      {Master of Science in Computing and Information Systems; GPA: 4.00}{Anticipated Dec. 2020}
+      \resumeItemListStart
+        \resumeItem{Concentrations}
+          {Cybersecurity, Web \& Mobile Computing}
+        \resumeItem{Selected Coursework}
+          {
+            \resumeListMulticolStart{3}
+              \item Information Security Principles
+              \item Secure Software Engineering
+              \item Data Security and Privacy
+              \item Distributed Systems
+              \item SQL Database Design
+              \item Web Architectures
+              \item Mobile Development
+              \item % for vertical alignment
+            \resumeListMulticolEnd
+          }
+      \resumeItemListEnd
     \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+      {Calvin University (formerly Calvin College)}{Grand Rapids, MI}
+      {Bachelor of Science in Engineering with Honors; GPA: 4.00}{May 2016}
+      \resumeItemListStart
+        \resumeItem{Concentration}
+          {Electrical \& Computer}
+        \resumeItem{Minors}
+          {Computer Science, Mathematics, and Business}
+%        \resumeItem{Selected Coursework}
+%          {
+%            \resumeListMulticolStart{3}
+%              \item Digital Systems Design
+%              \item Computer Architecture
+%              \item Data Structures and Algorithms
+%              \item Operating Systems
+%              \item High Performance Computing
+%              \item Computer Security
+%              \item Advanced Linear Algebra
+%              \item Various intro business classes
+%            \resumeListMulticolEnd
+%          }
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 
@@ -96,57 +163,27 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
+      {DornerWorks Ltd.}{Grand Rapids, MI}
+      {Embedded Software Engineer}{June 2016 - Present}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+        \resumeItem{Multiprocess C Systems Programming}
+          {Implemented a multithreaded runtime library that communicated with a multi-partition health monitoring application}
+        \resumeItem{Continuous Integration}
+          {Stood up a Jenkinsfile pipeline-driven CI platform to remotely cycle power and provide serial access to target boards}
+        \resumeItem{Isolation Technologies}
+          {Extended and used separation technologies Xen hypervisor and the seL4 microkernel}
+        \resumeItem{Simulation Software}
+          {Optimized automotive radar simulation C++ software for speed and fidelity with threading and vector instructions (OpenMP and Intel SSE)}
+        \resumeItem{Touch Driver}
+          {Developed Windows EC 7 touch screen drivers in C using SPI and I2C}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
+      {Boeing}{Everett, WA}
+      {Avionics Systems Engineer, Intern}{June - August 2015}
       \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+        \resumeItem{Systems Engineering}
+          {Performed systems integration, requirements development, and lab testing}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -155,26 +192,59 @@
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+    \resumeSubItem{\href{https://github.com/kkredit/z_check}{z\_check}}
+      {C error handling and logging library to enable robust programming practices}
+    \resumeSubItem{\href{https://github.com/kkredit/MQTT-sweeper-android}{MQTT Security App}}
+      {MQTT client for Android that analyzes server configurations for security properties}
+    \resumeSubItem{IoT Irrigation}
+      {Irrigation control system using mesh networking and a 3G gateway connecting to a web UI}
   \resumeSubHeadingListEnd
 
-%
+
 %--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
+\section{Programming Skills}
+  \resumeSubHeadingListStart
+
+  \resumeSubItem{Languages}
+    {
+      \resumeListMulticolStart{6}
+        \item % leave an empty column
+        \item C
+        \item C++
+        \item Bash
+        \item Java
+        \item Python
+        \item SQL
+        \item HTML/CSS
+        \item JavaScript
+      \resumeListMulticolEnd
+    }
+  \resumeSubItem{Technologies}
+    {
+      \resumeListMulticolStart{6}
+        \item % leave an empty column
+        \item Linux
+        \item gdb
+        \item valgrind
+        \item Docker
+        \item Jenkins
+        \item \LaTeX
+        \item seL4
+        \item Xen
+        \item Rails
+        \item React
+      \resumeListMulticolEnd
+    }
+  \resumeSubHeadingListEnd
+
+
+%--------REFERENCES------------
+\section{References}
+\resumeSubHeadingListStart
+  % Put  your references in references.tex with the format
+  % \resumeReference{First Last}{Relationship}{email@addr.com}{(###) ###-####}
+  \input{references}
+\resumeSubHeadingListEnd
 
 
 %-------------------------------------------
