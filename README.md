@@ -4,15 +4,17 @@ A single-page, one-column resume for software developers. It uses the base latex
 
 ## Motivation
 
-(Sourabh Bajaj speaking) I created this template as managing a resume on Google Docs was hard and changing any formatting was too difficult since it had to be applied in multiple places. Most currently available templates either focus on two columns, or are multiple pages long. I personally found the two-column templates hard to focus while multiple-page resumes were just too long to be used in career fairs.
+(Sourabh Bajaj) I created this template as managing a resume on Google Docs was hard and changing any formatting was too difficult since it had to be applied in multiple places. Most currently available templates either focus on two columns, or are multiple pages long. I personally found the two-column templates hard to focus while multiple-page resumes were just too long to be used in career fairs.
 
 ## This Fork
 
-I (Kevin Kredit) added a few more sections and `\input`s for references and contact info, assuming you don't want to post those online. See instructions in `resume.tex`.
+(Kevin Kredit) I added a few more sections and `\input`s for references and contact info, assuming you don't want to post those online. See instructions in `resume.tex`.
+
+To build, run `make` or `make example`. Requires a working installation of LaTeX.
 
 ## Preview
 
-![Resume Screenshot](/resume_preview.png)
+![Resume Screenshot](/example/example-resume-1.png)
 
 ## License
 

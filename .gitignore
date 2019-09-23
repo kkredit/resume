@@ -1,2 +1,13 @@
+# Private files
 contact-info.tex
 references.tex
+
+# Build objects
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+*.png
