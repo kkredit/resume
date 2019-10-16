@@ -16,6 +16,21 @@ To build, run `make` or `make example`. Requires a working installation of LaTeX
 
 ![Resume Screenshot](/example/example-resume-1.png)
 
+## LaTeX Installation
+
+If you're new to LaTeX, an easy way to get started is with TexStudio.
+
+Ubuntu:
+
+```sh
+$ sudo apt-get install texstudio texlive texlive-latex-extra latexmk
+```
+
+Windows:
+
+- Install [TexStudio](http://texstudio.sourceforge.net/)
+- Install [TexLive](https://www.tug.org/texlive/acquire-netinstall.html)
+
 ## License
 
 Format is MIT but all the data is owned by Kevin Kredit.
