@@ -75,6 +75,7 @@
 
 \newcommand{\resumeListMulticolStart}[1]{
   \vspace{-2.4em}
+  \setlength{\columnsep}{-1pc}
   \begin{multicols}{#1}
     \begin{itemize}[label={}]
       \item
@@ -107,8 +108,10 @@
 
 %-----------OBJECTIVE-----------------
 \section{Objective}
-Embedded software engineer seeking to move into higher level software and advance the state of safety and security.
 
+% Embedded software engineer seeking to move into higher level software and advance the state of safety and security.
+
+Full-stack software developer interested in building reliable, safe, and secure systems.
 
 %-----------EDUCATION-----------------
 \section{Education}
@@ -125,13 +128,14 @@ Embedded software engineer seeking to move into higher level software and advanc
               \item Information Security Principles
               \item Secure Software Engineering
               \item Data Security and Privacy
+              \item % for vertical alignment
               \item Distributed Systems
               \item SQL Database Design
               \item Web Architectures
+              \item % for vertical alignment
               \item Mobile Development
               \item Programming Languages
               \item Thesis
-              \item % for vertical alignment
             \resumeListMulticolEnd
           }
       \resumeItemListEnd
@@ -168,12 +172,14 @@ Embedded software engineer seeking to move into higher level software and advanc
       {DornerWorks Ltd.}{Grand Rapids, MI}
       {Embedded Software Engineer}{June 2016 - Present}
       \resumeItemListStart
+        \resumeItem{Web and IoT Application}
+          {Devops work on a Ruby on Rails + distributed JRuby application using MQTT and AWS}
         \resumeItem{Multiprocess C Systems Programming}
           {Implemented a multithreaded runtime library that communicated with a multi-partition health monitoring application}
         \resumeItem{Continuous Integration}
           {Stood up a Jenkinsfile pipeline-driven CI platform to remotely cycle power and provide serial access to target boards}
         \resumeItem{Isolation Technologies}
-          {Extended and used separation technologies Xen hypervisor and the seL4 microkernel}
+          {Extended and used separation technologies Xen hypervisor and seL4 microkernel}
         \resumeItem{Simulation Software}
           {Optimized automotive radar simulation C++ software for speed and fidelity with threading and vector instructions (OpenMP and Intel SSE)}
         % \resumeItem{Touch Driver}
@@ -203,38 +209,40 @@ Embedded software engineer seeking to move into higher level software and advanc
   \resumeSubHeadingListEnd
 
 
-%--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
+%--------TECHNOLOGY EXPERIENCE------------
+\section{Technology Expierience}
   \resumeSubHeadingListStart
 
-  \resumeSubItem{Languages}
+  \resumeSubItem{Professional}
     {
       \resumeListMulticolStart{6}
         \item % leave an empty column
         \item C
         \item C++
         \item Bash
-        \item Java
-        \item Python
-        \item SQL
-        \item HTML/CSS
-        \item JavaScript
-      \resumeListMulticolEnd
-    }
-  \resumeSubItem{Technologies}
-    {
-      \resumeListMulticolStart{6}
-        \item % leave an empty column
+        \item HTML/CSS/JS
+        \item Ruby\,on\,Rails
         \item Linux
-        \item gdb
-        \item valgrind
+        \item gdb/valgrind
         \item Docker
         \item Jenkins
         \item \LaTeX
-        \item seL4
-        \item Xen
-        \item Rails
+      \resumeListMulticolEnd
+    }
+  \resumeSubItem{Academic/Hobby}
+    {
+      \resumeListMulticolStart{6}
+        \item % leave an empty column
+        \item Haskell
+        \item Clojure
+        \item Rust
+        \item Go
+        \item Java
         \item React
+        \item Threat\,modeling
+        \item Android/iOS
+        \item % leave an empty column
+        \item % leave an empty column
       \resumeListMulticolEnd
     }
   \resumeSubHeadingListEnd
