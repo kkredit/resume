@@ -6,6 +6,7 @@ references.tex
 *.aux
 *.log
 *.out
+*.dvi
 *.fls
 *.fdb_latexmk
 *.synctex.gz

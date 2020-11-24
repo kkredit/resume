@@ -58,6 +58,12 @@
   \vspace{-5pt}
 }
 
+\newcommand{\resumeSubheadingII}[2]{
+  \vspace{-1pt}
+    \textit{\small#1} \hfill \textit{\small #2}
+  \vspace{-5pt}
+}
+
 \newcommand{\resumeReference}[4]{
   \vspace{-1pt}\item
     \textbf{#1} - \textit{\small#2} \dotfill #3 - #4
@@ -141,7 +147,7 @@ Full-stack software developer interested in building reliable, safe, and secure 
             \resumeListMulticolEnd
           }
         \resumeItem{Thesis}
-          {\textit{Contending with Wicked Crypto}, an analysis of encryption technology and policy}
+          {\textit{Contending with Wicked Crypto}, an analysis of encryption policy and technology}
       \resumeItemListEnd
     \resumeSubheading
       {Calvin University (formerly Calvin College)}{Grand Rapids, MI}
@@ -174,19 +180,24 @@ Full-stack software developer interested in building reliable, safe, and secure 
 
     \resumeSubheading
       {DornerWorks Ltd.}{Grand Rapids, MI}
-      {Software Engineer}{June 2016 - Present}
+      {Full Stack Developer}{2019 - Present}
       \resumeItemListStart
+        \resumeItem{React+Redux Electron App}
+          {Agile development on a Node app dual-targeting the web and Electron}
         \resumeItem{Cloud and IoT Applications}
           {Devops work on AWS with MQTT, Lambda, Elastic Beanstalk, Docker, MySQL, Ruby on Rails, React, and Ruby and Python client applications;
             includes legacy and greenfield projects; led a successful port of a legacy application to Elastic Beanstalk}
+      \resumeItemListEnd
+      \resumeSubheadingII{C Systems Programmer}{2016 - 2019}
+      \resumeItemListStart
         % \resumeItem{Multiprocess C Systems Programming}
         %   {Implemented a multithreaded runtime library that communicated with a multi-partition health monitoring application}
         \resumeItem{Continuous Integration}
-          {Regularly stand up Jenkins and GitLab CI environments, including remote hardware power power cycle and serial access;
+          {Regularly set up Jenkins and GitLab CI environments, including remote hardware power power cycle and serial access;
             advocated for and implemented vulnerability scanning with SonarQube}
-        \resumeItem{Separation Technologies}
+        \resumeItem{Hypervisors and Kernels}
           {Extended and used separation technologies Xen hypervisor and seL4 microkernel}
-        \resumeItem{Simulation Software}
+        \resumeItem{C/C++ Performance Optimization}
           {Optimized automotive radar simulation C++ software for speed and fidelity with multi-threading and vector instructions with OpenMP and Intel SSE}
         % \resumeItem{Touch Driver}
         %   {Developed Windows EC 7 touch screen drivers in C using SPI and I2C}
@@ -207,7 +218,7 @@ Full-stack software developer interested in building reliable, safe, and secure 
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeSubItem{\href{https://github.com/kkredit/scramble-squares-solvers}{5-Language Puzzle Solver}}
-      {Solves ``scramble squares'' puzzles in five languages for learning and fun}
+      {Solves ``scramble squares'' puzzles in five languages to learn and compare}
     \resumeSubItem{\href{https://github.com/kkredit/z_check}{z\_check}}
       {C error handling and logging library to enable robust programming practices}
     % \resumeSubItem{\href{https://github.com/kkredit/smart-home-threat-model}{Smart Home Threat Model}}
@@ -229,7 +240,7 @@ Full-stack software developer interested in building reliable, safe, and secure 
         \item % leave an empty column
         \item AWS
         \item HTML/CSS/JS
-        \item React/jQuery
+        \item React/Redux
         \item Ruby/Rails
         \item Linux
         \item Docker

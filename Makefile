@@ -3,16 +3,16 @@ DOCNAME := resume
 EXAMPLE_DIR := example
 REQ_INPUTS := references.tex contact-info.tex
 
-.PHONY: clean
-.PHONY: default
-.PHONY: full-clean
-.PHONY: example
+.PHONY: clean default full-clean example live
 
 default: $(DOCNAME).pdf
 
 $(DOCNAME).pdf: $(DOCNAME).tex $(REQ_INPUTS)
 	pdflatex $(DOCNAME).tex
 	pdflatex $(DOCNAME).tex
+
+live:
+	latexmk -pvc resume.tex
 
 example:
 	-[ -f references.tex ] && cp references.tex references.tex.bak
